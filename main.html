@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>ScarCoder</title>
+  <link rel="stylesheet" href="main_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body id="body">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <section class="top-nav">
+    <div>
+      ScarCoder
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+    <div class='menu-button'></div>
+  </label>
+    <ul class="menu">
+      <li><a href="#" id="home">Главная</a></li>
+      <li><a href="#" id="open-reg">Регистрация</a></li>
+      <li><a href="#" id="open-log">Войти</a></li>
+      <li><a href="#" id="stats">статистика</a></li>
+      <li><a href="#" id="settings">настройки</a></li>
+      <li><a href="#" id="battery">ваша батарея</a></li>
+      <li><a href="#" id="game-1">игра змейка</a></li>
+    </ul>
+  </section>
+  
+  
+  
+  <div class="log-menu" id="log-menu">
+    <div class="log-box">
+      <button onclick="location.href='database.html"><a href="database.html">нажми на меня</a></button>
+      <button class="close-log" id="close-log">close</button>
+    </div>
+  </div>
+  
+  
+  <div class="log-menu" id="home-menu">
+    <div class="log-box">
+          <div class="wrapper">
+        <div class="container">
+            <canvas id="wheel"></canvas>
+            <button id="spin-btn">крутить!</button>
+            <img src="spinner-arrow.svg" alt="">
+        </div>
+        <div id="final-value">
+            <p>надми на кнопку чтобы начать крутить колесо</p>
+        </div>
+    </div>
+
+
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Chart JS Plugin for displaying text over chart -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+      <button class="close-log" id="close-home">close</button>
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="log-menu" id="stats-menu">
+    <div class="log-box">
+          <div class="card">
+        <h2>просмотры</h2>
+        <p>Scarcik</p>
+        <div class="pulse"></div>
+        <div class="chart-area">
+            <div class="grid"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+      <button class="close-log" id="close-stats">close</button>
+    </div>
+  </div>
+  
+  
+  
+  
+
+
+  <div class="log-menu" id="battery-menu">
+    <div class="log-box">
+      <section class="battery">
+        <div class="Bcard">
+            <div class="Bpill">
+                <div class="Blevel">
+                    <div class="Bliquid"></div>
+                </div>
+            </div>
+            <div class="Bdata">
+                <p class="Btext">Battery :</p>
+                <h1 class="Bpercentage">20%</h1>
+                <p class="Bstatus">
+                    <i class="ri-plug-line"></i>
+                </p>
+            </div>
+        </div>
+    </section>
+      <button class="close-log" id="close-battery">close</button>
+    </div>
+  </div>
+
+
+
+<div class="log-menu" id="game-1-menu">
+    <div class="log-box">
+      <div class="score-container">
+        <div>Score : <span id="current-score">0</span></div>
+        <div>High Score : <span id="high-score">0</span></div>
+    </div>
+
+    <canvas id="gameCanvas" width="420" height="420"></canvas>
+    <div id="game-over">
+        Game Over!
+        <button id="restart-btn">Restart Game</button>
+    </div>
+      <button class="close-log" id="close-game-1">close</button>
+    </div>
+  </div>
+
+
+
+  
+  <div class="log-menu" id="reg-menu">
+    <div class="log-box">
+      
+        <button onclick="location.href='database.html"><a href="database.html">нажми на меня</a></button>
+      <button class="close-log" id="close-reg">close</button>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="log-menu" id="dls-menu">
+    <div class="log-box">
+      <a href="index.html">123</a>
+      <button class="close-log" id="close-dls">close</button>
+    </div>
+  </div>
+
+
+
+
+
+  
+  <div class="log-menu" id="settings-menu">
+    <div class="log-box">
+      <div>
+        <ul>
+          <li><a id="dark-theme">включить тёмную тему</a></li>
+          <li><a id="white-theme">включить светлую тему</a></li>
+        </ul>
+      </div>
+      <button class="close-log" id="close-settings">close</button>
+    </div>
+  </div>
+  
+  
+  <div class="block">
+    <h2 class="text">SCARCODERYT</h2>
+  </div>
+  <script src="main_script.js"></script>
+</body>
+</html>

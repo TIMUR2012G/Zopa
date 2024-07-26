@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="lstyle.css">
+    <title>database</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Регастра</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>попробуй регнутся через гугл аккаунт!!!</span>
+                <input type="text" placeholder="ваше имячко" name="name" required>
+                <input type="email" placeholder="ваша потичка" name="email" required>
+                <input type="text" placeholder="ваш пароличек" name="passwordik" required>
+                <button>всё</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Войти</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>пж войди через гугл у меня db сломалась(</span>
+                <input type="email" placeholder="ваша потичка" name="email" required>
+                <input type="text" placeholder="ваш пароличек" name="passwordik" required>
+                <a href="#">забыли паролик?</a>
+                <button>войтика</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>прив</h1>
+                    <p>войди пж по братски</p>
+                    <button class="hidden" id="login">Войтика</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>привэт брытан</h1>
+                    <p>пегнись пж по брытски</p>
+                    <button class="hidden" id="register">регнутся</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lscript.js"></script>
+</body>
+
+</html>

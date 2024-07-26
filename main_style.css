@@ -1,0 +1,632 @@
+* {
+  transition: 0.5s all;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: wheat;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.block {
+  position: relative;
+  margin: 300px auto 0;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(0deg, #000, #272727);
+  align-content: center;
+}
+.block:after,
+.block:before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.block:after {
+  filter: blur(50px);
+}
+.log-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99998;
+  background: rgba(0,0,0,.3);
+  display: grid;
+  overflow-y: auto;
+  overflow-x: auto;
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .4s,  visibility.4s;
+}
+.log-box {
+  width: 100%;
+  height: 100%;
+  padding: 45px;
+  z-index: 1;
+  background: chocolate;
+  transform: scale(0);
+  transition: transform .8s;
+}
+.log-menu.open {
+  visibility: visible;
+  opacity: 1;
+}
+.log-menu.open .log-box {
+  transform: scale(1);
+}
+.close-log {
+  display: flex;
+  position: relative;
+  align-items: start;
+  justify-content: start;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+h2 {
+  vertical-align: center;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  font-family: "Raleway";
+  box-sizing: border-box;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00BAF0;
+  background: linear-gradient(to left, lime, green);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF;
+  height: 50px;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}
+
+body {
+  background: white;
+  color: black
+}
+
+body.dark {
+  background: black;
+  color: bisque;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.card{
+    position: relative;
+    background-color: #1b1b1b;
+    width: 360px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.08);
+}
+
+.card h2{
+    color: lime;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.card p{
+    color: green;
+    font-size: 12px;
+    margin: 0 0 16px;
+}
+
+.card .pulse{
+    position: absolute;
+    background: #3498db;
+    width: 14px;
+    height: 14px;
+    right: 31px;
+    top: 35px;
+    border-radius: 50%;
+}
+
+.card .pulse::after{
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 0.1px solid #3498db;
+    transform-origin: center;
+    opacity: 0.8;
+    scale: 0;
+    animation: pulse 3s linear infinite;
+}
+
+@keyframes pulse{
+    70%{
+        scale: 0;
+        opacity: 0.8;
+    }
+    100%{
+        scale: 3;
+        opacity: 0;
+    }
+}
+
+.card .chart-area{
+    position: relative;
+}
+
+.card .chart-area .grid{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-image: repeating-linear-gradient(to right, transparent 0% 3%, #f9f9f9 3% 3.5%, transparent 3% 18.65%);
+}
+
+.card .chart-area .grid::after{
+    content: "";
+    position: inherit;
+    z-index: 1;
+    bottom: 0;
+    width: inherit;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(27, 27, 27, 1), rgba(27, 27, 27, 0.9), rgba(27, 27, 27, 1));
+}
+
+.apexcharts-tooltip.apexcharts-theme-light{
+    color: lime;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    box-shadow: none;
+    padding: 4px 4px 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 0;
+}
+
+.apexcharts-tooltip-title, .apexcharts-xaxistooltip-bottom.apexcharts-theme-light{
+    display: none;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(135deg, #4fc3f7, #1976d2);
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 34.37em;
+    max-height: 90vh;
+    background-color: #fff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 3em;
+    border-radius: 1em;
+    box-shadow: 0 4em 5em rgba(27, 8, 53, 0.2);
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#wheel{
+    max-height: inherit;
+    width: inherit;
+    top: 0;
+    padding: 0;
+}
+
+#spin-btn{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 26%;
+    width: 26%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    background: radial-gradient(#4caf50 50%, #1b5e20 85%);
+    color: #33691e;
+    text-transform: uppercase;
+    font-size: 1.8em;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+img{
+    position: absolute;
+    width: 4em;
+    top: 45%;
+    right: -8%;
+}
+
+#final-value{
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1.5em;
+    color: #202020;
+    font-weight: 500;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .wrapper{
+        font-size: 12px;
+    }
+
+    img{
+        right: -5%;
+    }
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    font-family: 'Ubuntu';
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --gradient-color-red: linear-gradient(90deg, hsl(7, 89%, 46%) 15%, hsl(11, 93%, 68%) 100%);
+    --gradient-color-orange : linear-gradient(90deg, hsl(22,89%,46%) 15%,hsl(54,90%,68%)100%);
+    --gradient-color-yellow : linear-gradient(90deg,hsl(54,89%,46%) 15%,hsl(92,90%,45%)100%);
+    --gradient-color-green : linear-gradient(90deg,hsl(92,89%,46%) 15%,hsl(92,90%,68%)100%);
+}
+
+.battery{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    margin: 0 1.5rem;
+}
+
+.Bcard{
+    position: relative;
+    width: 270px;
+    height: 240px;
+    background: #222;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.Btext{
+    margin-bottom: 0.5rem;
+}
+
+.Bpercentage{
+    font-size: 2.5rem;
+}
+
+.Bstatus{
+    position: absolute;
+    bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+    font-size: 0.8rem;
+}
+
+.Bstatus i{
+    font-size: 1.25rem;
+}
+
+.Bpill{
+    position: relative;
+    width: 75px;
+    height: 180px;
+    background-color: #222;
+    box-shadow: inset 20px 0 48px hsl(0, 0%, 16%), inset -4px 12px 48px hsl(0, 0%, 56%);
+    border-radius: 3rem;
+    justify-self: flex-start;
+}
+
+.Blevel{
+    position: absolute;
+    inset: 2px;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+
+.Bliquid{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: var(--gradient-color-red);
+    box-shadow: inset -10px 0 12px hsla(0, 0%, 0%, 0.1), inset 12px 0 12px hsla(0, 0%, 0%, 0.15);
+    transition: 0.3s;
+}
+
+.Bliquid::after{
+    content: "";
+    position: absolute;
+    height: 8px;
+    box-shadow: inset 0 -3px 6px hsla(0, 0%, 0%, 0.2);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -4px;
+    border-radius: 50%;
+}
+
+.green-color{
+    background: var(--gradient-color-green);
+}
+
+.animated-green{
+    background: var(--gradient-color-green);
+    animation: animated-charging 1.2s infinite alternate;
+}
+
+.animated-red{
+    background: var(--gradient-color-red);
+    animation: animated-low 1.2s infinite alternate;
+}
+
+.animated-green, .animated-red, .green-color{
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes animated-charging{
+    0%{
+        text-shadow: none;
+    }
+    100%{
+        text-shadow: 0 0 6px hsl(92, 90%, 68%);
+    }
+}
+
+@keyframes animated-low{
+    0%{
+        text-shadow: none;
+    }
+    100%{
+        text-shadow: 0 0 8px hsl(7, 89%, 46%);
+    }
+}
+
+.gradient-color-red, .green-color-red::after{
+    background: var(--gradient-color-red);
+}
+
+.gradient-color-green, .green-color-green::after{
+    background: var(--gradient-color-green);
+}
+
+.gradient-color-orange, .green-color-orange::after{
+    background: var(--gradient-color-orange);
+}
+
+.gradient-color-yellow, .green-color-yellow::after{
+    background: var(--gradient-color-yellow);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+canvas{
+    border: 2px solid #fff;
+}
+
+.score-container{
+    display: flex;
+    justify-content: space-between;
+    width: 420px;
+    font-size: 18px;
+}
+
+#restart-btn{
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+  background: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
